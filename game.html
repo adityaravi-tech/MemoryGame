@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEMORY GAME</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id = "back-to-homepage" onclick="backToHomePage()">Go Back to Homepage</button>
+    <div id="container">
+        <h1>MEMORY GAME</h1>
+        
+        <div id="controls">
+            <label for="difficulty">Choose Difficulty:</label>
+            <select id="difficulty">
+                <option value="very easy">Very Easy</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="impossible">Impossible</option>
+            </select>
+            <button id="hint-button">Use Hint</button>
+            <div id="hint-counter">Hints Available: 0</div>
+        </div>
+
+        <div id="game-board"></div>
+
+        <div id="status">
+            <p id="timer">Time: 0s</p>
+            <p>Moves: <span id="move-counter">0</span></p>
+            <p id="coinCount">Coins: 0</p>
+            <div id="score-container">
+                <div id="Score">Score: 0 points</div>
+                <div id="BestScore">Best Score: 0 points</div>
+            </div>
+            <button id="reset-button">Reset Game</button>
+            <button id="reset-bestscore">Reset Best Score</button>
+        </div>
+
+        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        <button id="tutorial-button">How to Play</button>
+        <button id="coin-system-button">Coin System</button>
+    </div>
+
+    <div id="tutorial-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-tutorial" class="close" aria-label="Close tutorial">&times;</span>
+            <h2>HOW TO PLAY</h2>
+            <p>The objective of the game is to match all the pairs of cards.</p>
+            <p>Click on a card to reveal it's Value. Then click another card to try to find the matching pair. If not the cards will flip back. </p>
+            <p>Your goal is to match all the pairs in the fewest moves and shortest time!</p>
+            <h4>Good Luck!</h4>
+        </div>
+    </div>
+
+    <div id="coin-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-window" class="close" aria-label="Close modal">&times;</span>
+            <h2>How to Earn Coins</h2>
+            <p>Coins are an ingame resource to let you purchase consumables and other items including hints!</p>
+            <br><p>Here's the breakdown on how to earn coins:</p>
+            <table class ="centre">
+                <tr>
+                    <th>LEVEL</th>
+                    <th>COINS</th>
+                </tr>
+                <tr>
+                    <th>EASY</th>
+                    <th>175</th>
+                </tr> 
+                <tr>
+                    <th>MEDIUM</th>
+                    <th>250</th>
+                </tr>
+                <tr>
+                    <th>HARD</th>
+                    <th>500</th>
+                </tr>
+                <tr>
+                    <th>IMPOSSIBLE</th>
+                    <th>1000</th>
+                </tr>
+            </table>
+            <br>
+            <p>Bonus Points are rewarded for the following:</p>
+            <table class="centre">
+                <tr>
+                    <th>SCORE</th>
+                    <th>BONUS COINS</th>
+                </tr>
+                <tr>
+                    <th>SCORE >= 750</th>
+                    <th>250</th>
+                </tr>
+                <tr>
+                    <th>SCORE >= 500 && &lt;500</th>
+                    <th>125</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="gameScript.js"></script>
+</body>
+</html>
